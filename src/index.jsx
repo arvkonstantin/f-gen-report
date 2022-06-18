@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import FieldsInfo from './FieldsInfo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -12,6 +13,7 @@ const onFileSelect = (e) => {
 
 root.render(
   <React.StrictMode>
+    <FieldsInfo />
     <input type="file" onChange={onFileSelect} />
   </React.StrictMode>,
 );
