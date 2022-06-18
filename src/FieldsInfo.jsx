@@ -4,7 +4,7 @@ export default function FieldsInfo() {
   const [fieldsInfo, setFieldsInfo] = React.useState('');
 
   React.useEffect(() => {
-    fetch('/api/fieldsInfo', { method: 'GET' }).then((resp) => setFieldsInfo(resp.body));
+    fetch('/api/fieldsInfo', { method: 'GET' }).then((resp) => setFieldsInfo(resp.text()));
   }, []);
 
   return (
