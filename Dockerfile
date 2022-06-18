@@ -1,7 +1,7 @@
 FROM node:18.2.0-alpine as build
 WORKDIR /app
 COPY package.json /app/package.json
-RUN npm install --only=prod
+RUN npm install --scripts-prepend-node-path=auto
 COPY . /app
 RUN npm run build
 FROM nginx:1.21.6-alpine
