@@ -8,8 +8,6 @@ export default function FieldsInfo() {
   }, []);
 
   return (
-    fieldsInfo.map(
-      (object) => <p key={object}>{object.content}</p>,
-    )
+    fieldsInfo.toString()
   );
 }
