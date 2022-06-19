@@ -8,7 +8,13 @@ const onFileSelect = (e) => {
   const formData = new FormData();
   formData.append('zip', e.target.files[0]);
   // noinspection JSIgnoredPromiseFromCall
-  fetch('/api/upload', { method: 'POST', body: formData });
+  fetch('/api/upload', { method: 'POST', body: formData })
+    .then((response) => response.blob())
+    .then((blob) => URL.createObjectURL(blob))
+    .then((url) => {
+      window.open(url, '_blank');
+      URL.revokeObjectURL(url);
+    });
 };
 
 root.render(
